@@ -17,7 +17,7 @@ pipeline {
 
         stage('email') {
           steps {
-            emailext(subject: 'String', body: 'String', attachLog: true, to: 'aashi.upadhyay@assetvantage.com', saveOutput: true, from: 'snigdhaupadhyay08@gmail.com', mimeType: ' type=text/html', presendScript: 'this could be used to notify people that a new build is happening build.previousBuild.result.toString().equals(\'TRUE\')')
+            emailext body: 'this is the execution of the jenkins build', subject: 'Jenkins Job', to: 'aashi.upadhyay@asset.vantage.com'
           }
         }
 
