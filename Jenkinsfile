@@ -17,7 +17,7 @@ pipeline {
 
         stage('email') {
           steps {
-            emailext body: 'this is the execution of the jenkins build', subject: 'Jenkins Job', to: 'aashi.upadhyay@asset.vantage.com'
+            emailext(body: 'this is the execution of the jenkins build', subject: 'Jenkins Job', to: 'aashi.upadhyay@assetvantage.com')
           }
         }
 
