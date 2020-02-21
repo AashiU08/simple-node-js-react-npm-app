@@ -12,8 +12,8 @@ pipeline {
         stage('Build') {
           steps {
             sh 'npm install'
-          }
-        }
+          
+        
 
         stage('email') {
           steps {
