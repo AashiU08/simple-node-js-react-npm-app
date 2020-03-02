@@ -44,25 +44,28 @@ def notify(status){
            )
 }
 pipeline {
-  agent {
-    docker {
-      image 'node:8-alpine'
-      args '-p 3000:3000'
+    agent {
+        docker {
+            image 'node:7-alpine'
+            args '-p 3000:3000'
+        }
     }
-}
-  stages {
-    stage('Build') {
-      parallel {
+    environment { 
+        CI = 'true'
+    }
+    stages {
         stage('Build') {
             steps {
                 sh 'npm install'
-                
+
                 notify ('npm has been installed')
             }
         }
         stage('Test') {
             steps {
                 sh './jenkins/scripts/test.sh'
+
+                notify ('test stage has been executed')
             }
         }
         stage('Deliver') { 
@@ -73,9 +76,4 @@ pipeline {
             }
         }
     }
-
-  }
-  environment {
-    CI = 'true'
-  }
 }
