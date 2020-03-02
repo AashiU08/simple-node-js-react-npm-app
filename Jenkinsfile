@@ -40,7 +40,7 @@ def notify(status){
             </table>
             """,
        subject: """JenkinsNotification: ${status}:""", 
-       to: 'aashi.upadhyay@assetvantage.com'
+       to: 'snigdhaupadhyay08@gmail.com'
            )
 }
 pipeline {
